@@ -113,6 +113,7 @@ WSGI_APPLICATION = 'Medium.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
+#
 
 
 DATABASES = {
