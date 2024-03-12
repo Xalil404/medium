@@ -140,3 +140,14 @@ body {
     background: transparent;
     border: none;
 }
+
+/* My CSS*/
+
+/* Heading and subheading on homepage image*/
+.custom-display {
+    font-size: 106px; 
+}
+
+.custom-display-2 {
+    font-size: 24px; 
+}

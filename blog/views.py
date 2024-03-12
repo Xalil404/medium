@@ -86,3 +86,10 @@ def about(request):
 
 def landing_page(request):
     return render(request, 'landing_page.html')
+
+
+def write(request):
+    return render(request, 'write.html')
+
+def profile(request):
+    return render(request, 'profile.html')

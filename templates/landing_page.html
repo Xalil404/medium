@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<!--
 <div class="container">
   <h1>Welcome to Our Landing Page</h1>
   <p>This is a brief description of what our website offers.</p>
   <a href="{% url 'about' %}" class="btn btn-primary">Learn More</a>
 </div>
+-->
+
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="https://res.cloudinary.com/dugcwv1mf/image/upload/v1710248012/Project%201/89_hd0fx2.jpg" class="d-block w-100 carousel-img" alt="Landing page image">
+    <div class="container">
+      <div class="carousel-caption text-start">
+        <h1 class="custom-display text-dark">Stay curious.</h1>
+        <p class="custom-display-2 opacity-75 text-dark">Discover stories, thinking, and expertise from writers on any topic.</p>
+        <!--
+        <p><a class="btn btn-lg btn-primary" href="{% url 'read' %}">Start Reading</a></p>
+      -->
+      <p><a class="btn btn-lg btn-dark rounded-pill text-white px-5" href="{% url 'read' %}">Start Reading</a></p>
+
+      </div>
+    </div>
+  </div>
 
 
 {% endblock %}
