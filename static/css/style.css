@@ -181,3 +181,10 @@ main {
     border-radius: 50px; 
 }
 
+.btn-full-width {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px; /* Add margin between the buttons */
+}
+
+
