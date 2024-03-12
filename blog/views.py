@@ -85,7 +85,9 @@ def about(request):
 
 
 def landing_page(request):
-    return render(request, 'landing_page.html')
+    # Retrieve the six most recent posts
+    recent_posts = Post.objects.filter(status=1).order_by('-created_on')[:6]
+    return render(request, 'landing_page.html', {'recent_posts': recent_posts})
 
 
 def write(request):

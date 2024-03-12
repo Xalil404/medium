@@ -4,7 +4,7 @@
 <html class="h-100">
 
 <head>
-    <title>CodeStar Blog</title>
+    <title>Medium</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/90a4223dfb.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -24,7 +25,7 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
         <div class="container-fluid">
             
                         <a class="navbar-brand ms-5" href="{% url 'landing_page' %}"><img src="https://res.cloudinary.com/dugcwv1mf/image/upload/v1710239682/Project%201/1679302694Medium-Logo-PNG_m5tjaz.png"
@@ -88,18 +89,6 @@
         {% endblock content %}
     </main>
 
-    <!-- Footer
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Code Instituters</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
-    </footer>
--->
-
-
-
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <a class="footer" href="{% url 'landing_page' %}">
         <img src="https://res.cloudinary.com/dugcwv1mf/image/upload/v1710239682/Project%201/1679302694Medium-Logo-PNG_m5tjaz.png"
@@ -110,17 +99,6 @@
             <li class="nav-item px-2"><a href="#" class="nav-link px-2 text-dark">Privacy</a></li>
         </ul>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
 
     <script>
         setTimeout(function () {

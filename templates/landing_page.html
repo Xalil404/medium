@@ -2,13 +2,6 @@
 
 {% block content %}
 <!--
-<div class="container">
-  <h1>Welcome to Our Landing Page</h1>
-  <p>This is a brief description of what our website offers.</p>
-  <a href="{% url 'about' %}" class="btn btn-primary">Learn More</a>
-</div>
--->
-
 <div class="carousel-inner">
   <div class="carousel-item active">
     <img src="https://res.cloudinary.com/dugcwv1mf/image/upload/v1710248012/Project%201/89_hd0fx2.jpg" class="d-block w-100 carousel-img" alt="Landing page image">
@@ -16,14 +9,65 @@
       <div class="carousel-caption text-start">
         <h1 class="custom-display text-dark">Stay curious.</h1>
         <p class="custom-display-2 opacity-75 text-dark">Discover stories, thinking, and expertise from writers on any topic.</p>
-        <!--
-        <p><a class="btn btn-lg btn-primary" href="{% url 'read' %}">Start Reading</a></p>
-      -->
       <p><a class="btn btn-lg btn-dark rounded-pill text-white px-5" href="{% url 'read' %}">Start Reading</a></p>
-
       </div>
     </div>
   </div>
+
+
+<div class="container mt-4">
+  <h2 class="mb-4">Recently Published Articles</h2>
+  <div class="row">
+    {% for post in recent_posts %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{{ post.featured_image.url }}" class="card-img-top" alt="{{ post.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.excerpt }}</p>
+          <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary">Read more</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+-->
+
+
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="https://res.cloudinary.com/dugcwv1mf/image/upload/v1710248012/Project%201/89_hd0fx2.jpg" class="d-block w-100 carousel-img" alt="Landing page image">
+    <div class="container">
+      <div class="carousel-caption text-start">
+        <h1 class="custom-display text-dark">Stay curious.</h1>
+        <p class="custom-display-2 opacity-75 text-dark">Discover stories, thinking, and expertise<br> from writers on any topic.</p>
+        <p><a class="btn btn-lg btn-dark rounded-pill text-white px-5" href="{% url 'read' %}">Start Reading</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <h2 class="mb-4"><i class="fa-solid fa-chart-line"></i> Trending on Medium</h2>
+  <div class="row">
+    {% for post in recent_posts %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{{ post.featured_image.url }}" class="card-img-top" alt="{{ post.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.excerpt }}</p>
+          <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary">Read more</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
 
 
 {% endblock %}
