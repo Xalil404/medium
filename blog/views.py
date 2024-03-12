@@ -91,5 +91,6 @@ def landing_page(request):
 def write(request):
     return render(request, 'write.html')
 
+
 def profile(request):
     return render(request, 'profile.html')
