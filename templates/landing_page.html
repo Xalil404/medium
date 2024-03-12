@@ -58,7 +58,11 @@
         <div class="card-body">
           <h5 class="card-title">{{ post.title }}</h5>
           <p class="card-text">{{ post.excerpt }}</p>
+          <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-black btn-pill">Read more</a>
+
+          <!--
           <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary">Read more</a>
+        -->
         </div>
       </div>
     </div>
