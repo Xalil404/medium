@@ -24,39 +24,50 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span class="red-o">o</span>de<span
-                        class="thin">|star</span></span></span></a>
+            
+                        <a class="navbar-brand ms-5" href="{% url 'landing_page' %}"><img src="https://res.cloudinary.com/dugcwv1mf/image/upload/v1710239682/Project%201/1679302694Medium-Logo-PNG_m5tjaz.png"
+                            alt="Logo" class="logo-image" style="width: 140px"></a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" aria-current="page" href="{% url 'landing_page' %}">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" aria-current="page" href="{% url 'read' %}">Read</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="">Write</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="">Profile</a>
+                    </li>
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'account_login' %}">Sign in</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link btn btn-dark btn-sm rounded-pill text-white px-4" href="{% url 'account_signup' %}">Get Started</a>
+                    </li>    
                     {% endif %}
-
                 </ul>
-                <span class="navbar-text text-muted">
-                    adventures of a software developer
-                </span>
             </div>
         </div>
     </nav>
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
