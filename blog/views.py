@@ -5,6 +5,14 @@ from .models import Post
 from .forms import CommentForm
 
 
+from django.shortcuts import render, redirect
+from django.utils.text import slugify
+from .forms import PostForm
+from .models import STATUS
+
+
+
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -90,9 +98,35 @@ def landing_page(request):
     return render(request, 'landing_page.html', {'recent_posts': recent_posts})
 
 
-def write(request):
-    return render(request, 'write.html')
-
-
 def profile(request):
     return render(request, 'profile.html')
+
+
+#def write(request):
+#    return render(request, 'write.html')
+
+
+def write(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+
+            # Set status to "published"
+            post.status = STATUS[1][0]
+            
+            # Generate unique slug based on the title
+            slug = slugify(post.title)
+            unique_slug = slug
+            counter = 1
+            while Post.objects.filter(slug=unique_slug).exists():
+                unique_slug = f'{slug}-{counter}'
+                counter += 1
+            post.slug = unique_slug
+            
+            post.save()
+            return redirect('post_detail', slug=post.slug)  # Redirect to post_detail view after successful submission
+    else:
+        form = PostForm()
+    return render(request, 'write.html', {'form': form})

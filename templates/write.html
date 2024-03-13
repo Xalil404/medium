@@ -2,10 +2,12 @@
 
 {% block content %}
 
-<h1>Write</h1>
-<h1>Write</h1>
-<h1>Write</h1>
-<h1>Write</h1>
+<h1>Create a New Blog Post</h1>
 
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Publish</button>
+</form>
 
 {% endblock %}
