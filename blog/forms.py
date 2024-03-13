@@ -17,3 +17,5 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         exclude = ['author', 'status', 'likes', 'slug']
+
+    featured_image = forms.ImageField(label='Featured Image', required=False)
