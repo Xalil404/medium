@@ -9,26 +9,28 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
-
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
-                you
-                have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-                first.{% endblocktrans %}</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
+      <div class="col-sm-6 offset-sm-3">
+        <div class="card my-5">
+          <div class="card-header text-center bg-dark text-white">
+            <h3>Please sign in</h3>
+          </div>
+          <div class="card-body">
+            <form class="login text-center mt-3" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              <div class="form-group">
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
                 {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+              </div>
+              <button class="btn btn-signup rounded-pill" type="submit">{% trans "Sign In" %}</button>
             </form>
+            <p class="m-5 text-center">No account?  <a class="link" href="{{ signup_url }}"><strong>Create one</strong></a>
+                </p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+
 {% endblock %}

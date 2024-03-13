@@ -107,18 +107,20 @@ body {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #000000;
     color: #fff;
+    transition: color 0.3s, background-color 0.3s; 
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #000000;
+    border: 2px solid black; 
 }
 
 .link {
-    color: #23BBBB;
+    color: #006e1a;
     text-decoration: none;
 }
 
@@ -187,6 +189,7 @@ main {
     padding-right: 40px; 
     transition: color 0.3s, background-color 0.3s; 
 }
+
 
 .btn-black:hover {
     background-color: white; 
@@ -265,3 +268,18 @@ main {
 }
 
 
+/*Login page*/
+.form-control {
+    margin-bottom: 1rem;
+}
+  
+.card {
+    padding: 2rem;
+}
+  
+/*Log out page bg image*/
+.bg-image-1 {
+    background-image: url('https://res.cloudinary.com/dugcwv1mf/image/upload/v1710248012/Project%201/89_hd0fx2.jpg');
+    background-size: cover;
+    background-position: center;
+}
