@@ -2,13 +2,48 @@
 
 {% block content %}
 
-<h1>Create a New Blog Post</h1>
 
-<form method="post" enctype="multipart/form-data">  
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Publish</button>
-</form>
+
+<div class="container">
+    <h1 class="text-center mt-5">Create a New Blog Post</h1>
+
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        {% csrf_token %}
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Title field -->
+                <div class="mb-3">
+                    <label for="id_title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="id_title" name="title">
+                </div>
+
+                <!-- Featured Image field -->
+                <div class="mb-3">
+                    <label for="id_featured_image" class="form-label">Featured Image</label>
+                    <input type="file" class="form-control" id="id_featured_image" name="featured_image">
+                </div>
+
+                <!-- Excerpt field -->
+                <div class="mb-3">
+                    <label for="id_excerpt" class="form-label">Excerpt</label>
+                    <textarea class="form-control" id="id_excerpt" name="excerpt"></textarea>
+                </div>
+
+                <!-- Content field -->
+                <div class="mb-3">
+                    <label for="id_content" class="form-label">Content</label>
+                    <textarea class="form-control" id="id_content" name="content"></textarea>
+                </div>
+
+                <!-- Publish button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Publish</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
 
 {% endblock %}
