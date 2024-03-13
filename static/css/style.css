@@ -184,7 +184,37 @@ main {
 .btn-full-width {
     display: block;
     width: 100%;
-    margin-bottom: 10px; /* Add margin between the buttons */
+    margin-bottom: 10px; 
+}
+
+
+/* About us 2 buttons */
+.strip {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+    text-decoration: none;
+    color: white;
+    padding-top: 55px; 
+    padding-bottom: 55px; 
+    padding-left: 30px; 
+    padding-right: 30px; 
+    font-size: 60px;
+}
+
+.strip:hover {
+    background-color: white;
+    color: black; 
+}
+
+.divider {
+    color: #fff;
+    padding-top: 3px;
+    padding-bottom: 3px; 
 }
 
 

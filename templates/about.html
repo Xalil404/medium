@@ -1,12 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!--
-<h1>About Page</h1>
-<h1>About Page</h1>
-<h1>About Page</h1>
-<h1>About Page</h1>
--->
+
 
 <div class="container">
     <div class="row">
@@ -35,47 +30,37 @@
     </div>
 </div>
 
-<!--
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <a href="#" class="btn btn-primary btn-full-width">Start reading</a>
-            <a href="#" class="btn btn-primary btn-full-width">Start writing</a>
-        </div>
-    </div>
-</div>
 
-<div>
-    <a href="">
-    <h1 class="box-title">Start Reading</h1>
+<a href="{% url 'read' %}" class="strip">
+    Start reading
+    <i class="fa-solid fa-arrow-right"></i>
 </a>
-    
+
+<div class="divider">
 </div>
-<div>
-    <a href="">
-        <h1 class="box-title">Start Writing</h1> 
-    </a>
-    
-</div>
--->
+
+<a href="#" class="strip">
+    Start writing
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
 
 
-<div class="container-fluid bg-dark py-4"> 
-    <div class="row">
-        <div class="col-md-12">
-            <a href="#" class="btn btn-dark btn-full-width">
-                <h1 class="box-title text-white">Start Reading</h1> 
-            </a>
-        </div>
-    </div>
-    <div class="row mt-2"> 
-        <div class="col-md-12">
-            <a href="#" class="btn btn-dark btn-full-width">
-                <h1 class="box-title text-white">Start Writing</h1> 
-            </a>
-        </div>
-    </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 {% endblock %}
