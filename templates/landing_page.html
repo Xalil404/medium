@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<!--Recent articles -->
+<!--Recent articles 
 <div class="container mt-4">
   <h2 class="mb-4"><i class="fa-solid fa-chart-line"></i> Trending on Medium</h2>
   <div class="row">
@@ -24,6 +24,30 @@
     <div class="col-md-4 mb-4">
       <div class="card">
         <img src="{{ post.featured_image.url }}" class="card-img-top" alt="{{ post.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.excerpt }}</p>
+          <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-black btn-pill">Read more</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+-->
+
+<!--Recent articles -->
+<div class="container mt-4">
+  <h2 class="mb-4"><i class="fa-solid fa-chart-line"></i> Trending on Medium</h2>
+  <div class="row">
+    {% for post in recent_posts %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        {% if "placeholder" in post.featured_image.url %}
+          <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="card-img-top" alt="{{ post.title }}">
+        {% else %}
+          <img src="{{ post.featured_image.url }}" class="card-img-top" alt="{{ post.title }}">
+        {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{ post.title }}</h5>
           <p class="card-text">{{ post.excerpt }}</p>
