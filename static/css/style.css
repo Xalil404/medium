@@ -88,7 +88,7 @@ body {
 */
 
 
-
+/* to separate masthead from featured image and make sure both sections are same size*/
 .masthead {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -123,11 +123,29 @@ body {
     margin-left: 3%;
 }
 
+/* to make sure trending articles on home page are same size*/
+.card-img-container {
+    overflow: hidden; /* Hide any overflowing content */
+    height: 200px; /* Set a fixed height for the container */
+}
+  
+  .card-img-container img {
+    width: 100%; /* Ensure the image fills the container horizontally */
+    height: auto; /* Preserve aspect ratio */
+}
+  
 
-
-
-
-
+/* to make sure images on the read page are same size*/
+.image-container {
+    overflow: hidden;
+    height: 200px; /* Set a fixed height for the image container */
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto; /* Preserve aspect ratio */
+  }
+  
 
 
 

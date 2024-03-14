@@ -22,4 +22,3 @@ class PostForm(forms.ModelForm):
             'content': SummernoteWidget(),  # Use SummernoteWidget for the content field
         }
 
-#    featured_image = forms.ImageField(label='Featured Image', required=False)
