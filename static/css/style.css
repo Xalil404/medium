@@ -51,12 +51,12 @@ body {
     margin: 4px;
     text-transform: uppercase;
 }
-
+/*
 .masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
-    display: inline-block;
+    
     height: 33vh;
     width: 100%;
 }
@@ -85,6 +85,53 @@ body {
     transform: skew(15deg);
     z-index: 100;
 }
+*/
+
+
+
+.masthead {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    overflow: hidden;
+    position: relative;
+    height: 33vh;
+    width: 80%;
+    background-color: #445261;
+}
+
+.masthead-text {
+    display: flex; /* Use flexbox to align elements */
+    justify-content: left; /* Center content horizontally */
+    color: #fff;
+}
+
+.post-title {
+    margin-bottom: 10px; /* Adjust spacing as needed */
+    font-size: 40px; /* Adjust font size as needed */
+}
+
+.post-subtitle {
+    font-size: 20px; /* Adjust font size as needed */
+}
+
+
+.featured-image {
+    width: 94%; /* Set a fixed width */
+    height: 500px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the specified dimensions */
+    margin-left: 3%;
+}
+
+
+
+
+
+
+
+
+
+
 
 .post-link {
     text-decoration: none;

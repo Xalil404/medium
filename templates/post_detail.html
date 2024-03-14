@@ -1,26 +1,61 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
-
+<!--
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
+                
                 <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
+                
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
+                
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src="{{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
+-->
+<div class="masthead-container">
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-12 masthead-text">
+
+                <div class="masthead-content">
+
+                <h1 class="post-title">{{ post.title }}</h1>
+                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row g-0">
+        <div class="col-md-12">
+            {% if "placeholder" in post.featured_image.url %}
+            <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="featured-image" alt="Featured Image">
+            {% else %}
+            <img src="{{ post.featured_image.url }}" class="featured-image" alt="Featured Image">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+</div>
+
+
 
 <div class="container">
     <div class="row">
