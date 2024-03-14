@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.utils.text import slugify
 from .forms import PostForm
 from .models import STATUS
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -102,10 +103,8 @@ def profile(request):
     return render(request, 'profile.html')
 
 
-#def write(request):
-#    return render(request, 'write.html')
 
-
+@login_required
 def write(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
