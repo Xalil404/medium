@@ -16,10 +16,10 @@ class CommentForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-#        fields = ['title', 'featured_image', 'excerpt', 'content']
+        fields = ['title', 'featured_image', 'excerpt', 'content']
         exclude = ['author', 'status', 'likes', 'slug']
         widgets = {
             'content': SummernoteWidget(),  # Use SummernoteWidget for the content field
         }
 
-    featured_image = forms.ImageField(label='Featured Image', required=False)
+#    featured_image = forms.ImageField(label='Featured Image', required=False)
