@@ -99,8 +99,11 @@ def landing_page(request):
     return render(request, 'landing_page.html', {'recent_posts': recent_posts})
 
 
+@login_required
 def profile(request):
-    return render(request, 'profile.html')
+    user = request.user
+    posts = Post.objects.filter(author=user)
+    return render(request, 'profile.html', {'posts': posts, 'user': user})
 
 
 @login_required

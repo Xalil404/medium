@@ -117,10 +117,10 @@ body {
 
 
 .featured-image {
-    width: 94%; /* Set a fixed width */
+    width: 88%; /* Set a fixed width */
     height: 500px; /* Set a fixed height */
     object-fit: cover; /* Ensure the image covers the specified dimensions */
-    margin-left: 3%;
+    margin-left: 6%;
 }
 
 /* to make sure trending articles on home page are same size*/
@@ -146,6 +146,22 @@ body {
     height: auto; /* Preserve aspect ratio */
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
