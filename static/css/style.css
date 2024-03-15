@@ -337,3 +337,35 @@ main {
     padding-bottom: 25px; 
     padding-top: 25px; 
 }
+
+
+/* Landing page get started block */
+.strip-landing {
+    display: flex; 
+    justify-content: center;
+    width: 100%;
+    background-color: black;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+    text-decoration: none;
+    color: white;
+    padding-top: 100px; 
+    padding-bottom: 50px; 
+    font-size: 60px;
+}
+
+
+.btn-custom-1 {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-custom-1:hover {
+    background-color: #006e1a;
+    color: #fff;
+}
+
+
+.bottom {
+    background-color: #000;
+    padding-bottom: 100px;
+}

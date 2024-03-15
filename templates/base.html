@@ -58,17 +58,17 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'write' %}">Write</a>
+                        <a class="nav-link active" href="{% url 'write' %}">Write</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                        <a class="nav-link active" href="{% url 'profile' %}">Profile</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link active" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'account_login' %}">Sign in</a>
+                        <a class="nav-link active" href="{% url 'account_login' %}">Sign in</a>
                     </li>
                     <li class="nav-item mx-4">
                         <a class="nav-link btn btn-dark btn-sm rounded-pill text-white px-4" href="{% url 'account_signup' %}">Get Started</a>
