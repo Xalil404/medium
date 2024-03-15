@@ -55,41 +55,6 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-/*
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-*/
 
 
 /* to separate masthead from featured image and make sure both sections are same size*/
@@ -143,33 +108,13 @@ body {
 .image-container {
     overflow: hidden;
     height: 200px; /* Set a fixed height for the image container */
-  }
+}
   
   .image-container img {
     width: 100%;
     height: auto; /* Preserve aspect ratio */
-  }
+}
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .post-link {
     text-decoration: none;
@@ -264,6 +209,12 @@ main {
 
 .custom-display-2 {
     font-size: 24px; 
+}
+
+/* Jumbotron start reading button*/
+.jumbotron-btn:hover {
+    color: #fff !important;
+    background-color: #006e1a !important;
 }
 
 /* Button on 6 posts visible on landing page */
@@ -367,4 +318,22 @@ main {
     background-image: url('https://res.cloudinary.com/dugcwv1mf/image/upload/v1710248012/Project%201/89_hd0fx2.jpg');
     background-size: cover;
     background-position: center;
+}
+
+
+/*Profile publish post button*/
+.btn-custom:hover {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+/*Manage list of published posts in profile*/
+.list-group {
+    max-width: 1000px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the list group */
+}
+
+.post-link {
+    padding-bottom: 25px; 
+    padding-top: 25px; 
 }

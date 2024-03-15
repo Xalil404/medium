@@ -3,11 +3,11 @@
 {% block content %}
 
 <div class="container">
-    <h1>Welcome to your profile, {{ user.username }}!</h1>
+    <h1 class="text-center pt-5 pb-5">Welcome to your profile, {{ user.username }}!</h1>
 
     {% if posts %}
-        <h2>Your Published Posts:</h2>
-        <div class="list-group">
+        <h2 class="text-center pb-3">Your Published Posts:</h2>
+        <div class="list-group text-center">
             {% for post in posts %}
                 <a href="{% url 'post_detail' post.slug %}" class="list-group-item list-group-item-action post-link">
                     {{ post.title }}
@@ -15,7 +15,10 @@
             {% endfor %}
         </div>
     {% else %}
-        <p>You haven't published any posts yet.</p>
+        <p class="text-center pb-3">You haven't published any posts yet.</p>
+        <div class="text-center">
+        <p><a class="btn btn-lg btn-dark rounded-pill text-white px-5 btn-custom" href="{% url 'write' %}">Create Post</a></p>
+    </div>
     {% endif %}
 </div>
 
