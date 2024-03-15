@@ -1,3 +1,4 @@
+
 body {
     background-color: #F9FAFC;
 }
@@ -368,4 +369,46 @@ main {
 .bottom {
     background-color: #000;
     padding-bottom: 100px;
+}
+
+
+/* Media query: Tablets (768px and down) */
+@media  screen and (max-width: 1024px) {
+    /* Jumbotron */
+    .carousel-inner {
+        background-color: #f6c653;
+        padding-top: 50px; 
+    }
+
+    .carousel-caption h1 {
+        font-size: 3rem; /* Adjust as needed */
+    }
+    .carousel-caption p {
+        font-size: 1.5rem; /* Adjust as needed */
+        margin-bottom: 20px; /* Adjust the spacing between paragraphs */
+    }
+}
+
+
+/* Media query: mobile (430x and down) */
+@media  screen and (max-width: 430px) {
+    /* Jumbotron */
+    .carousel-inner {
+        background-color: #f6c653;
+        padding-top: 250px; 
+    }
+
+    .carousel-caption h1 {
+        font-size: 3rem; /* Adjust as needed */
+    }
+    .carousel-caption p {
+        font-size: 1.5rem; /* Adjust as needed */
+        margin-bottom: 10px; /* Adjust the spacing between paragraphs */
+    }
+
+    .wisdom {
+        text-align: center;
+        padding-left: 20px; /* Adjust padding-left as needed */
+        padding-right: 20px; /* Adjust padding-right as needed */
+    }
 }
