@@ -29,8 +29,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
+#DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['medium-410cf7fad2b1.herokuapp.com', 'localhost', '127.0.0.1']
@@ -127,18 +127,14 @@ TEMPLATES = [
 ]
 
 
-# Google authentication
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+    'social_core.backends.facebook.FacebookOAuth2',  # Add Facebook backend here
+    'microsoft_auth.backends.MicrosoftAuthenticationBackend',  # Add Microsoft backend here
 ]
 
 
-# Facebook authentication
-AUTHENTICATION_BACKENDS = [
-    'social_core.backends.facebook.FacebookOAuth2',
-    'django.contrib.auth.backends.ModelBackend',
-]
 
 SOCIAL_AUTH_FACEBOOK_KEY = "316692831420721"
 SOCIAL_AUTH_FACEBOOK_SECRET = "4b05dbf55438d51f43f47b2780bcf191"
@@ -147,12 +143,7 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = [
     'email',
 ]
 
-# Microsoft authentication
-AUTHENTICATION_BACKENDS = [
-    'microsoft_auth.backends.MicrosoftAuthenticationBackend',
-    'django.contrib.auth.backends.ModelBackend' # if you also want to use Django's authentication
-    # I recommend keeping this with at least one database superuser in case of unable to use others
-]
+
 
 MICROSOFT_AUTH_CLIENT_ID = '79b146b8-0bbf-4bd8-bc76-3726a46434fe'
 MICROSOFT_AUTH_CLIENT_SECRET = 'c4aafbc2-8ba7-45ac-b4e8-5ede0bd071c0'
