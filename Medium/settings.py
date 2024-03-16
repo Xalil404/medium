@@ -146,7 +146,7 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = [
 
 
 MICROSOFT_AUTH_CLIENT_ID = '79b146b8-0bbf-4bd8-bc76-3726a46434fe'
-MICROSOFT_AUTH_CLIENT_SECRET = 'c4aafbc2-8ba7-45ac-b4e8-5ede0bd071c0'
+MICROSOFT_AUTH_CLIENT_SECRET = 'SfU8Q~.HF0Zp11I-dhZNJzxXRvkUF8666Uie1dw0'
 # Tenant ID is also needed for single tenant applications
 # MICROSOFT_AUTH_TENANT_ID = 'your-tenant-id-from-apps.dev.microsoft.com'
 
