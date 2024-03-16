@@ -144,7 +144,6 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = [
 ]
 
 
-
 MICROSOFT_AUTH_CLIENT_ID = os.environ.get("MICROSOFT_AUTH_CLIENT_ID")
 MICROSOFT_AUTH_CLIENT_SECRET = os.environ.get("MICROSOFT_AUTH_CLIENT_SECRET")
 # Tenant ID is also needed for single tenant applications
