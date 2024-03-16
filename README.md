@@ -37,3 +37,10 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 ---
 
 Happy coding!
+
+
+## Credits
+
+* This [tutorial](https://www.youtube.com/watch?v=56w8p0goIfs) on how to set up Google Authentication.
+
+* This [article](https://medium.com/geekculture/django-social-authentication-sign-in-with-facebook-eb52c384e1d) and [tutorial](https://www.youtube.com/watch?v=waVBRjqDKyA) on how to set up Facebook Authentication.
