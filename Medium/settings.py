@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'django_summernote',
     'crispy_forms',
+    'social_django',
     'blog',
 ]
 
@@ -82,6 +83,9 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+
+
+
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-info',
         messages.INFO: 'alert-info',
@@ -98,6 +102,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'Medium.urls'
@@ -113,6 +118,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends', 
             ],
         },
     },
@@ -125,6 +131,19 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+
+# Facebook authentication
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = "316692831420721"
+SOCIAL_AUTH_FACEBOOK_SECRET = "4b05dbf55438d51f43f47b2780bcf191"
+#for extra info
+SOCIAL_AUTH_FACEBOOK_SCOPE = [
+    'email',
+]
 
 WSGI_APPLICATION = 'Medium.wsgi.application'
 
