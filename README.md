@@ -44,3 +44,5 @@ Happy coding!
 * This [tutorial](https://www.youtube.com/watch?v=56w8p0goIfs) on how to set up Google Authentication.
 
 * This [article](https://medium.com/geekculture/django-social-authentication-sign-in-with-facebook-eb52c384e1d) and [tutorial](https://www.youtube.com/watch?v=waVBRjqDKyA) on how to set up Facebook Authentication.
+
+* Github authorization [tutorial](https://python.plainenglish.io/django-allauth-a-guide-to-enabling-social-logins-with-github-f820239fb73f) and this [tutorial](https://www.freecodecamp.org/news/set-up-github-oauth-on-django-for-user-authentication/).
