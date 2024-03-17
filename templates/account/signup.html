@@ -28,13 +28,11 @@
             <a href="{% provider_login_url 'google' %}" class="btn btn btn-danger btn-lg rounded-pill mt-3" role="button"
                     aria-pressed="true">Sign up with Google</a>
 
-            <a href="{% provider_login_url 'github' %}" class="btn btn-dark btn-lg rounded-pill mt-3" role="button"
-                    aria-pressed="true">Sign in with Github</a>
+            <a href="{% provider_login_url 'github' %}" class="btn btn-secondary btn-lg rounded-pill mt-3" role="button"
+                    aria-pressed="true">Sign up with Github</a>
 
             <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary btn-lg rounded-pill mt-3" role="button"
                     aria-pressed="true">Sign up with Facebook</a>
-
-            
 
             <p class="m-5 text-center">Already have an account?  <a class="link" href="{{ login_url }}"><strong>Sign in</strong></a>
                 </p>
