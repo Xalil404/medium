@@ -14,7 +14,7 @@
           <div class="card-header text-center bg-dark text-white">
             <h3>Sign up</h3>
           </div>
-          <div class="card-body">
+          <div class="card-body bg-white">
             <form class="login text-center mt-3" method="POST" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -23,7 +23,7 @@
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
                 {% endif %}
               </div>
-              <button class="btn btn-signup rounded-pill pt-2 pb-2" type="submit">{% trans "Sign Up" %}</button>
+              <button class="btn btn-signup rounded-pill pt-2 pb-2 mt-4" type="submit">{% trans "Sign Up" %}</button>
             </form>
             <a href="{% provider_login_url 'google' %}" class="btn btn btn-danger btn-lg rounded-pill mt-3" role="button"
                     aria-pressed="true">Sign up with Google</a>

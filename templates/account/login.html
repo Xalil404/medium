@@ -13,9 +13,9 @@
       <div class="col-sm-6 offset-sm-3">
         <div class="card my-5">
           <div class="card-header text-center bg-dark text-white">
-            <h3>Please sign in</h3>
+            <h3>Sign in</h3>
           </div>
-          <div class="card-body">
+          <div class="card-body bg-white">
             <form class="login text-center mt-3" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -24,15 +24,13 @@
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
                 {% endif %}
               </div>
-              <button class="btn btn-signup rounded-pill pt-2 pb-2" type="submit">{% trans "Sign In" %}</button>
+              <button class="btn btn-signup rounded-pill pt-2 pb-2 mt-4" type="submit">{% trans "Sign In" %}</button>
             </form>
             <a href="{% provider_login_url 'google' %}" class="btn btn-danger btn-lg rounded-pill mt-3" role="button"
                     aria-pressed="true">Sign in with Google</a>
             
             <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary btn-lg rounded-pill mt-3" role="button"
                     aria-pressed="true">Sign in with Facebook</a>
-
-            
 
             <p class="m-5 text-center">No account?  <a class="link" href="{{ signup_url }}"><strong>Create one</strong></a>
                 </p>
