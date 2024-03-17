@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     "allauth.socialaccount.providers.github",
+    "allauth.socialaccount.providers.twitter",
     "rest_framework",
     "rest_framework.authtoken",
     "dj_rest_auth",
