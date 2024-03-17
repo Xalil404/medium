@@ -18,12 +18,6 @@ if os.path.isfile('env.py'):
     import env
 
 
-#for microsoft login
-import msal
-from msal import PublicClientApplication
-import webbrowser
-import requests
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -64,7 +58,6 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'social_django',
-    'microsoft_auth',
     'blog',
 ]
 
@@ -127,22 +120,13 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends', 
-                'microsoft_auth.context_processors.microsoft',
             ],
         },
     },
 ]
 
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-    'social_core.backends.facebook.FacebookOAuth2',  # Add Facebook backend here
-    'microsoft_auth.backends.MicrosoftAuthenticationBackend',  # Add Microsoft backend here
-]
-
-
-
+# Facebook
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get("SOCIAL_AUTH_FACEBOOK_KEY")
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get("SOCIAL_AUTH_FACEBOOK_SECRET")
 #for extra info
@@ -150,97 +134,14 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = [
     'email',
 ]
 
-# Microsoft
-APPLICATION_ID = os.environ.get("APPLICATION_ID")
-CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
 
 
-authority_url = 'https://login.microsoftonline.com/consumers/' 
-base_url = 'https://graph.microsoft.com/v1.0/'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+]
 
-
-SCOPES = ['User.Read', 'User.Export.ALL']   
-
-client_instance = msal.ConfidentialClientApplication(
-    client_id=APPLICATION_ID,
-    client_credential=CLIENT_SECRET,
-    authority=authority_url
-)
-
-# Check if there is already a valid token available
-result = client_instance.acquire_token_silent(SCOPES, account=None)
-if not result.get('access_token'):
-    authorization_request_url = client_instance.get_authorization_request_url(SCOPES)
-    print(authorization_request_url)
-    webbrowser.open(authorization_request_url, new=True)
-
-    authorization_code = input("Enter the authorization code: ")
-
-    # Acquire access token using the authorization code
-    result = client_instance.acquire_token_by_authorization_code(
-        code=authorization_code,
-        scopes=SCOPES,
-    )
-
-# Check if the access token is successfully acquired
-if 'access_token' in result:
-    access_token_id = result['access_token']
-    headers = {'Authorization': 'Bearer ' + access_token_id}
-
-    endpoint = base_url + 'me'
-    response = requests.get(endpoint, headers=headers)
-
-
-
-
-
-#authorization_request_url = client_instance.get_authorization_request_url(SCOPES)
-#print(authorization_request_url)
-#webbrowser.open(authorization_request_url, new=True)
-
-
-#authorization_code = input("Enter the authorization code: ")
-
-# Acquire access token using the authorization code
-#result = client_instance.acquire_token_by_authorization_code(
-#    code=authorization_code,
-#    scopes=SCOPES,
-#)
-
-# Check if the access token is successfully acquired
-#if 'access_token' in result:
-#    access_token_id = result['access_token']
-#    headers = {'Authorization': 'Bearer ' + access_token_id}
-
-#    endpoint = base_url + 'me'
-#    response = requests.get(endpoint, headers=headers)
-
-#    if response.status_code == 200:
-#        print("User data retrieved successfully:", response.json())
-#    else:
-#        print("Failed to retrieve user data:", response.text)
-#else:
-#    print("Failed to acquire access token:", result.get('error_description', 'Unknown error'))
-###############################
-#authorization_code = 'M.C545_BAY.2.U.0fc84154-7a3b-4c87-e4a1-94e58ba4a8ca'
-#access_token = client_instance.acquire_token_by_authorization_code(
-#    code=authorization_code,
-#    scopes=SCOPES
-#)
-
-#access_token_id = access_token['access_token']
-#headers = {'Authorization': 'Bearer ' + access_token_id}
-
-#endpoint = base_url + 'me' 
-#response = requests.get(endpoint, headers=headers)
-
-# Tenant ID is also needed for single tenant applications
-# MICROSOFT_AUTH_TENANT_ID = 'your-tenant-id-from-apps.dev.microsoft.com'
-
-# pick one MICROSOFT_AUTH_LOGIN_TYPE value
-# Microsoft authentication
-# include Microsoft Accounts, Office 365 Enterpirse and Azure AD accounts
-#MICROSOFT_AUTH_LOGIN_TYPE = 'ma'
 
 WSGI_APPLICATION = 'Medium.wsgi.application'
 
