@@ -1,7 +1,7 @@
 from .models import Comment
 from django import forms
 
-# to publish from front end
+# to publish blog posts from front end
 from .models import Post
 from django_summernote.widgets import SummernoteWidget
 
@@ -12,7 +12,7 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
 
 
-# for users to post from the write post page
+# for users to publish posts from the write post page
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -21,4 +21,3 @@ class PostForm(forms.ModelForm):
         widgets = {
             'content': SummernoteWidget(),  # Use SummernoteWidget for the content field
         }
-

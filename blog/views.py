@@ -12,7 +12,6 @@ from .models import STATUS
 from django.contrib.auth.decorators import login_required
 
 
-
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -87,7 +86,6 @@ class PostLike(View):
     
 
 
-
 def about(request):
     return render(request, 'about.html')
 
@@ -130,5 +128,4 @@ def write(request):
     else:
         form = PostForm()
     return render(request, 'write.html', {'form': form})
-
 
