@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     "allauth.socialaccount.providers.github",
-    "allauth.socialaccount.providers.twitter",
+    'allauth.socialaccount.providers.twitter',
     "rest_framework",
     "rest_framework.authtoken",
     "dj_rest_auth",
@@ -125,6 +125,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends', 
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -147,6 +148,7 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.github.TwitterOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
 ]
 
 
