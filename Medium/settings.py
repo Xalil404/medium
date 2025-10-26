@@ -34,7 +34,7 @@ DEBUG = True
 # DEBUG = False
 
 
-ALLOWED_HOSTS = ['medium-410cf7fad2b1.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['medium-410cf7fad2b1.herokuapp.com', 'medium-1ra6.onrender.com', 'localhost', '127.0.0.1']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
