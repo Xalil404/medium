@@ -1,7 +1,7 @@
 # Medium
 Medium is a minified version of the popular blogging website [Medium](https://medium.com/).
 
-Link to live site [here](https://medium-410cf7fad2b1.herokuapp.com/).
+Link to live site [here](https://medium-1ra6.onrender.com).
 <p align="center">
 <img src="https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729362339/Screenshot_2024-10-19_at_7.25.15_PM_lpnxmu.png" width="auto" height="auto" alt="image of the Burger Joint website home page on all devices"></p>
 
